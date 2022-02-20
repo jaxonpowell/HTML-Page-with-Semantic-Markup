@@ -18,6 +18,12 @@
   <meta name="msapplication-config" content="./browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
+  <style>
+    picture img {
+      width: 100%;
+    }
+  </style>
+
   <title>Bro Bro's 9</title>
 </head>
 
@@ -25,9 +31,10 @@
   <header>Bro Bro's 9 Inc.</header>
   <nav>
     <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
+      <li><a href="">Home</a></li>
+      <li><a href="about/index.html">About</a></li>
+      <li><a href="form/index.html">Form</a></li>
+      <li><a href="contact/index.html">Contact</a></li>
     </ul>
   </nav>
   <aside>
@@ -40,6 +47,17 @@
   </aside>
 
   <main>
+
+    <div class="hero">
+      <picture>
+        <source srcset="images/MeetTheCrew.jpg" media="(min-width: 800px)">
+        <source srcset="images/MeetTheCrew-800px.jpg" media="(min-width: 400px)">
+        <source srcset="images/MeetTheCrew-400px.jpg" media="(min-width: 201px)">
+        <source srcset="images/MeetTheCrew-200px.jpg" media="(max-width: 200px)">
+        <img src="images/MeetTheCrew.jpg" alt="The Bro Bro's 9 crew members">
+      </picture>
+    </div>
+
     <article>
       <h1>Bro Bro's 9 Frozen Treats</h1>
       <p>This is the official website for Bro Bro's 9 Frozen Treats Food Truck! Bro Bro's 9 is a family owned business
@@ -48,7 +66,7 @@
         Bro's frozen Treats food truck on Instagram so that you can receive updates on where we will be serving!</p>
     </article>
     <figure>
-      <img src="bananaWEBP.webp" alt="Bro Bro's Banana" width="125" height="150">
+      <img src="images/bananaWEBP.webp" alt="Bro Bro's Banana" width="125" height="150">
       <figcaption>Bro Bro's 9 Banana</figcaption>
     </figure>
     <h2>Menu</h2>
@@ -87,6 +105,15 @@
       <dt>"Bro Bro's":</dt>
       <dd>Named because it's a family, specifically a brother, ran operation!</dd>
     </dl>
+
+    <div>
+      <p>Enjoy this simple SVG Image! </p>
+      <svg viewBox="0 0 120 120" width="100" height="100">
+        <line x1="10" x2="110" y1="10" y2="110" stroke="black" stroke-width="10" stroke-linecap="round" />
+        <line x1="10" x2="110" y1="110" y2="10" stroke="black" stroke-width="10" stroke-linecap="round" />
+      </svg>
+    </div>
+
   </main>
 
   <footer>
