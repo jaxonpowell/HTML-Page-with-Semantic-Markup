@@ -34,7 +34,7 @@ article {
 }
 
 article img {
-  width: auto;
+  width: 100%;
 }
 
 a {
@@ -234,7 +234,7 @@ nav a:hover::after {
   display: flex;
   flex-direction: column;
 
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .panel .image-wrapper {
