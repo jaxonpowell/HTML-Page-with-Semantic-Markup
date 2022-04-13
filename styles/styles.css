@@ -63,7 +63,89 @@ picture img {
 }
 
 form {
+  display: grid;
   font-size: 1.75rem;
+}
+
+.form main {
+  margin-top: 4rem;
+}
+
+fieldset {
+  display: grid;
+  border: none;
+  padding: 0;
+  grid-column-gap: 1rem;
+  align-items: center;
+  grid-template-columns: min-content 1fr;
+}
+
+legend {
+  grid-column-end: span 2;
+}
+
+form > input,
+fieldset,
+select {
+  margin-bottom: 1rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid black;
+  position: relative;
+}
+
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+  box-shadow: 0 0 5px black;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="radio"]::after,
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+input[type="radio"]::after {
+  width: 16px;
+  height: 16px;
+  background-color: black;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transform: scale(0);
+  transition: transform 200ms;
+}
+
+input[type="checkbox"]::after {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 6px;
+  height: 12px;
+  transform: rotate(38deg);
+  top: 1px;
+  left: 6px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+input[type="radio"]:checked::after {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:checked::after {
+  opacity: 1;
 }
 
 .button {
@@ -94,6 +176,10 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+nav li {
+  text-align: center;
 }
 
 nav a {
@@ -371,6 +457,11 @@ nav a[href]:hover {
     position: relative;
   }
 
+  .form main,
+  .about main {
+    margin-top: 0rem;
+  }
+
   nav {
     position: static;
     display: block;
@@ -429,6 +520,42 @@ nav a[href]:hover {
     transform: scaleX(1);
     transition: transform 500ms;
     transform-origin: left;
+  }
+
+  .form section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form img {
+    min-width: 100px;
+  }
+
+  form {
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  form > label {
+    justify-self: end;
+  }
+
+  label[for="chunky"],
+  label[for="customerStyle"] {
+    justify-self: start;
+  }
+
+  label[for="chunky"],
+  input[type="range"],
+  label[for="customerStyle"],
+  fieldset,
+  select,
+  button {
+    grid-column-start: 2;
+  }
+
+  button {
+    justify-self: start;
   }
 }
 
