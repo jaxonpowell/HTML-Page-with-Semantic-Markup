@@ -55,7 +55,96 @@
   </div>
 
   <main>
-    <h1>Form</h1>
+    <section>
+      <h1>Catering: Request a Quote</h1>
+
+      <form action="">
+        <div>
+          <label for="first-name">First Name:</label>
+          <input type="text" name="first" id="first-name">
+        </div>
+
+        <label for="email">Your email:</label>
+        <input type="email" name="email" id="email">
+        <div>
+          <label for="phone">Cell number:</label>
+          <input type="tel" name="phone" id="phone">
+        </div>
+        <label for="birthdate">Date of Event:</label>
+        <input type="date" name="birthdate" id="birthdate">
+        <p>
+          <label for="smoothClr">Color Theme of Event: </label>
+          <input id="smoothClr" name="smoothClr" type="color">
+        </p>
+        <p>
+          <label for="chunky">How much do you love frozen treats?</label>
+          <input type="range" id="chunky" name="chunky" list="tickmarks" value="0">
+          <datalist id="tickmarks">
+            <option value="0" label="0%"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+            <option value="40"></option>
+            <option value="50" label="50%"></option>
+            <option value="60"></option>
+            <option value="70"></option>
+            <option value="80"></option>
+            <option value="90"></option>
+            <option value="100" label="100%"></option>
+          </datalist>
+        </p>
+        <p>Do you want the frozen treats dipped?</p>
+        <div>
+          <input type="radio" id="MilkChocolate" name="dipped" value="MilkChocolate" checked>
+          <label for="MilkChocolate">Milk Chocolate</label>
+        </div>
+
+        <div>
+          <input type="radio" id="WhiteChocolate" name="dipped" value="WhiteChocolate">
+          <label for="WhiteChocolate">White Chocolate</label>
+        </div>
+
+        <div>
+          <input type="radio" id="almond" name="dipped" value="DarkChocolate">
+          <label for="DarkChocolate">Dark Chocolate</label>
+        </div>
+
+        <div>
+          <input type="radio" id="NonDipped" name="dipped" value="NonDipped">
+          <label for="NonDipped">Non Dipped</label>
+        </div>
+
+
+        <p class="question">What toppings would you like on your treats? (Check all that apply)</p>
+        <fieldset>
+          <input type="checkbox" id="Fruit" name="Toppings" value="Fruit">
+          <label for="Fruit">Fruit</label>
+
+          <input type="checkbox" id="Candy" name="Toppings" value="Candy">
+          <label for="Candy">Candy</label>
+
+          <input type="checkbox" id="Cookies" name="Toppings" value="Cookies">
+          <label for="Cookies">Cookies</label>
+
+          <input type="checkbox" id="NoToppings" name="Toppings" value="NoToppings">
+          <label for="NoToppings">No Toppings</label>
+        </fieldset>
+        <fieldset>
+          <legend>How many people are you expecting?</legend>
+          <label for="customerStyle"></label>
+          <select name="customerStyle" id="customerStyle">
+            <option value="50">50</option>
+            <option value="50-100">50-100</option>
+            <option value="100-150">100-150</option>
+            <option value="150+">More than 150</option>
+          </select>
+        </fieldset>
+
+      </form>
+      <button onclick="changeBackground()"> Save </button>
+    </section>
+
+
     <div class="loader"></div>
     <div>
       <img src="../images/BroBro's9SVG.svg" alt="SVG image of Bro Bro's 9 alternative Logo">
@@ -73,6 +162,12 @@
         document.querySelector(".main-menu").classList.toggle("menu-show");
       });
     });
+  </script>
+  <script>
+    function changeBackground() {
+      alert("Your data is saved");
+      document.body.style.backgroundColor = document.getElementById("smoothClr").value;
+    }
   </script>
 
 </body>
