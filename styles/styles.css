@@ -67,12 +67,99 @@ form {
   font-size: 1.75rem;
 }
 
+/* Start of lights on and off switch on the contact form css */
+
+.bg {
+  background-color: rgb(0, 0, 0);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+  width: 100%;
+  z-index: -1;
+}
+
+.lightSwitchText {
+  margin: auto;
+  margin-top: 2vh;
+  color: rgb(0, 90, 117);
+}
+
+.lightSwitch {
+  border: 0.4rem solid #1b1f1e;
+  border-radius: 3.8rem;
+  background-color: #3b3f3e;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  height: 3.8rem;
+  overflow: hidden;
+  position: relative;
+  transition: 1s;
+  width: 110px;
+  margin: auto;
+  margin-top: 3vh;
+}
+
+.lightSwitch::before {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: 1s;
+  background-color: #fefffa;
+  border: 0.4rem solid #e2e4d9;
+  border-radius: 3.8rem;
+  box-shadow: inset -3px -3px 10px #e2e4d9;
+  box-sizing: border-box;
+  height: calc(3rem - 4px);
+  left: 2px;
+  bottom: 2px;
+  width: calc(3rem - 4px);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked + .lightSwitch {
+  background-color: #99e0f6;
+  border-color: #8ab5c8;
+}
+input[type="checkbox"]:checked + .lightSwitch::before {
+  background-color: #fedc6e;
+  border-color: #c5c86f;
+  box-shadow: inset 3px 3px 10px #fff86e;
+  left: calc(100% - 3rem);
+}
+input[type="checkbox"]:checked + .lightSwitch + .bg {
+  background-color: #f2f2f2;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+/* End of lights on and off switch on the contact form css */
+
+.form img {
+  max-width: 400px;
+}
+
 .form main {
   margin-top: 4rem;
   max-width: 80rem;
 }
 
-fieldset {
+.form fieldset {
   display: grid;
   border: none;
   padding: 0;
@@ -81,7 +168,7 @@ fieldset {
   grid-template-columns: min-content 1fr;
 }
 
-legend {
+.form legend {
   grid-column-end: span 2;
 }
 
@@ -91,8 +178,8 @@ select {
   margin-bottom: 1rem;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+.form input[type="radio"],
+.form input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   width: 24px;
@@ -101,8 +188,8 @@ input[type="checkbox"] {
   position: relative;
 }
 
-input[type="radio"]:hover,
-input[type="checkbox"]:hover {
+.form input[type="radio"]:hover,
+.form input[type="checkbox"]:hover {
   box-shadow: 0 0 5px black;
 }
 
@@ -111,7 +198,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]::after,
-input[type="checkbox"]::after {
+.form input[type="checkbox"]::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -129,7 +216,7 @@ input[type="radio"]::after {
   transition: transform 200ms;
 }
 
-input[type="checkbox"]::after {
+.form input[type="checkbox"]::after {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   width: 6px;
@@ -145,7 +232,7 @@ input[type="radio"]:checked::after {
   transform: scale(1);
 }
 
-input[type="checkbox"]:checked::after {
+.form input[type="checkbox"]:checked::after {
   opacity: 1;
 }
 
@@ -522,7 +609,7 @@ nav a[href]:hover {
     transform-origin: left;
   }
 
-  form {
+  .form form {
     grid-template-columns: max-content 1fr;
     grid-column-gap: 1rem;
   }
